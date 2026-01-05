@@ -51,11 +51,11 @@ export function useAuth() {
     return { error };
   };
 
-  const signInWithProvider = async (provider: 'google' | 'github' | 'twitter') => {
+  const signInWithProvider = async (provider: 'google' | 'github' | 'linkedin_oidc') => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
       options: {
-        redirectTo: `${window.location.origin}/`
+        redirectTo: `${window.location.origin}/dashboard`
       }
     });
     return { error };
