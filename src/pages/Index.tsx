@@ -129,8 +129,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      {/* Top Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <Activity className="w-6 h-6 text-primary" />
+            <span className="font-bold text-lg">Fleet Intelligence</span>
+          </div>
+          <Button variant="outline" onClick={() => navigate('/auth')}>
+            Sign In
+          </Button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center py-20">
+      <section className="relative min-h-screen flex items-center py-20 pt-32">
         {/* Background Elements */}
         <FloatingOrb className="top-[10%] left-[5%]" size="lg" color="primary" />
         <FloatingOrb className="bottom-[20%] right-[10%]" size="md" color="accent" delay />
